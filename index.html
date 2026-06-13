@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Take Control of Your Phone — A Privacy Guide</title>
+  <meta name="description" content="A practical guide to protecting your phone's privacy, purging app data, and reducing hidden telemetry leaks." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <span class="logo">🛡️ PhoneControl</span>
+      <a href="#subscribe" class="nav-cta">Subscribe</a>
+    </nav>
+    <div class="hero-content">
+      <h1>📱 Take Control of Your Phone</h1>
+      <p class="tagline">A practical guide to protecting your privacy and reducing hidden data leaks.</p>
+      <a href="#guide" class="btn-primary">Read the Guide</a>
+    </div>
+  </header>
+
+  <main id="guide" class="container">
+
+    <section class="card">
+      <h2>1. Why This Matters</h2>
+      <p>Smartphones are powerful but also constantly connected. Many apps quietly send telemetry — usage statistics, location data, and behavioral patterns — even when you're not actively using them. Uninstalling an app doesn't always stop this flow. This guide helps you understand how to purge residual data, reset identifiers, and stay in control.</p>
+    </section>
+
+    <section class="card">
+      <h2>2. How to Properly Uninstall an App</h2>
+
+      <h3>🧹 Step 1: Purge App Data Before Uninstalling</h3>
+      <ol>
+        <li>Go to <strong>Settings → Apps → [App Name] → Storage</strong>.</li>
+        <li>Tap <strong>Clear Cache</strong> and <strong>Clear Data</strong>.</li>
+        <li>Only then tap <strong>Uninstall</strong>.</li>
+      </ol>
+      <p>This ensures the app's local footprint is erased before removal.</p>
+
+      <h3>🗂 Step 2: Verify Residual Folders</h3>
+      <p>After uninstalling, open a file manager and navigate to:</p>
+      <pre><code>Android/data/
+Android/obb/</code></pre>
+      <p>Look for folders named after the app (e.g., <code>com.example.app</code>) and delete them manually — these may contain leftover logs or cached media.</p>
+
+      <h3>🔍 Step 3: Check for Hidden Services</h3>
+      <p>Some apps register background services or permissions that persist. Use tools like AuditAd's Package Auditor Engine — or follow the manual steps below — to detect and remove them.</p>
+    </section>
+
+    <section class="card">
+      <h2>3. Manual Privacy Audit</h2>
+      <ul class="checklist">
+        <li><strong>Inspect App Permissions</strong> — Settings → Privacy → Permission Manager. Revoke what you don't use.</li>
+        <li><strong>Check Background Services</strong> — Settings → Apps → Show system apps. Force stop suspicious packages.</li>
+        <li><strong>Developer Options</strong> — Enable Developer Options → Running Services. Review unfamiliar items.</li>
+        <li><strong>File System Check</strong> — Inspect <code>Android/data/</code> and <code>Android/obb/</code> for leftover folders.</li>
+        <li><strong>Network Activity</strong> — Use trusted apps like NetGuard or GlassWire to see what's phoning home.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>4. Everyday Awareness</h2>
+      <div class="tips">
+        <div class="tip">
+          <h3>🔒 Reset Your Advertising ID</h3>
+          <p>Settings → Privacy → Ads → Reset Advertising ID. Breaks cross-app tracking chains.</p>
+        </div>
+        <div class="tip">
+          <h3>🌐 Use Private DNS</h3>
+          <p>Network & Internet → Private DNS. Use providers like AdGuard or Cloudflare.</p>
+        </div>
+        <div class="tip">
+          <h3>🧠 Be Skeptical of Permissions</h3>
+          <p>Avoid granting location, contacts, or microphone unnecessarily. Review periodically.</p>
+        </div>
+        <div class="tip">
+          <h3>🧩 Avoid "Free" Apps That Monetize Data</h3>
+          <p>Prefer open-source or paid apps with transparent privacy policies.</p>
+        </div>
+        <div class="tip">
+          <h3>🔄 Regularly Audit Your Device</h3>
+          <p>Clear logs, check permissions, and monitor network activity.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>5. The AuditAd Advantage</h2>
+      <p>AuditAd automates much of this work:</p>
+      <ul>
+        <li><strong>Diagnostic Center</strong> — Real-time DNS monitoring.</li>
+        <li><strong>Package Auditor Engine</strong> — Detects excessive permissions.</li>
+        <li><strong>Account Janitor</strong> — Guides Ad ID resets and privacy settings.</li>
+        <li><strong>Private DNS Settings</strong> — Helps configure secure DNS with zero battery drain.</li>
+      </ul>
+    </section>
+
+    <section class="card highlight">
+      <h2>6. Key Takeaway</h2>
+      <p>Taking control of your phone means understanding what happens behind the screen. By purging app data, resetting identifiers, and auditing hidden services, you can stop telemetry, reduce leaks, and reclaim your digital independence.</p>
+    </section>
+
+    <section id="subscribe" class="card subscribe">
+      <h2>📬 Get More Guides Like This</h2>
+      <p>Subscribe to receive practical privacy and security articles in your inbox. No spam, unsubscribe anytime.</p>
+
+      <!-- Replace the iframe src with your Google Form embed URL. See README.md for instructions. -->
+      <iframe
+        id="google-form"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSfkSMrqyZsd6b11qsz6PUpbvLi0IcCJIxQ4h3caBJZ-VYJuPA/viewform?embedded=true"
+        width="100%"
+        height="1039"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="Subscribe Form"
+        style="border-radius: 12px; background: transparent;"
+      >Loading…</iframe>
+      <p id="form-status" class="form-status" role="status"></p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> PhoneControl Guide · Built for awareness</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
